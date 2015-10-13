@@ -4,9 +4,9 @@ vendor: Alejandro J. Cura <alecu@protocultura.net>
 summary: webgl + websockets + MinIMU-9 demo
 description: This demo gets data from a MinIMU-9 via websockets, and uses that data to interact with a three.js scene
 icon: icon.png
-#services:
-#    serial-port-json-server:
-#        start: bin/serial-port-json-server
+services:
+    serial-port-json-server:
+        start: bin/serial-port-json-server
 parts:
   spjs:
     type: go-project
@@ -16,8 +16,8 @@ parts:
         - bin/serial-port-json-server
     snap:
       - $spjs
-#  glue:
-#    type: copy
-#    files:
-#      webcam-webui: bin/webcam-webui
+  glue:
+    type: copy
+    files:
+      html: html
 
