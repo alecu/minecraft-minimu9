@@ -1,0 +1,23 @@
+name: minecraft-minimu9
+version: 1
+vendor: Alejandro J. Cura <alecu@protocultura.net>
+summary: webgl + websockets + MinIMU-9 demo
+description: This demo gets data from a MinIMU-9 via websockets, and uses that data to interact with a three.js scene
+icon: icon.png
+#services:
+#    serial-port-json-server:
+#        start: bin/serial-port-json-server
+parts:
+  spjs:
+    type: go-project
+    source: git://github.com/alecu/serial-port-json-server
+    filesets:
+      spjs:
+        - bin/serial-port-json-server
+    snap:
+      - $spjs
+#  glue:
+#    type: copy
+#    files:
+#      webcam-webui: bin/webcam-webui
+
