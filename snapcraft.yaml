@@ -9,7 +9,7 @@ services:
         start: bin/serial-port-json-server
 parts:
   spjs:
-    type: go-project
+    plugin: go
     source: git://github.com/alecu/serial-port-json-server
     filesets:
       spjs:
@@ -17,7 +17,7 @@ parts:
     snap:
       - $spjs
   glue:
-    type: copy
+    plugin: copy
     files:
       html: html
 
